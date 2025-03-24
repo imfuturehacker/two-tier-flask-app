@@ -8,6 +8,11 @@ pipeline{
                 echo "Code cloned"
             }
         }
+        stage{
+            steps{
+                sh "trivy fs . --output output.json"
+            }
+        }
         stage("Build"){
             steps{
                 sh "docker build -t two-tier-flask-app ."
