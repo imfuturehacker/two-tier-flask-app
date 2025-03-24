@@ -15,8 +15,8 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "docker buld -t two-tier-flask-app ."
-                echo "code buld ho gyaaaaaa"
+                sh "docker build -t two-tier-flask-app ."
+                echo "code build ho gyaaaaaa"
             }
         }
         stage("Test"){
