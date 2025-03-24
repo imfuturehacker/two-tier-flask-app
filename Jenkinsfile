@@ -8,7 +8,7 @@ pipeline{
                 echo "Code cloned"
             }
         }
-        stage{
+        stage("trivy Scan"){
             steps{
                 sh "trivy fs . --output output.json"
             }
