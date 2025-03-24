@@ -2,7 +2,7 @@ pipeline{
     
     agent { label '1agent' }
     stages{
-        stage("Code")
+        stage("Code"){
             steps{
                 git url: "https://github.com/imfuturehacker/two-tier-flask-app" , branch: "master"
                 echo "Code cloned"
@@ -15,7 +15,7 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "docker build -t two-tier-flask-app ."
+                sh "docker buld -t two-tier-flask-app ."
                 echo "code buld ho gyaaaaaa"
             }
         }
